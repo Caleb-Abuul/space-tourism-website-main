@@ -12,36 +12,65 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-wrapper">
-                <img src="../starter-code/assets/shared/logo.svg" alt="logo">
-            </div>
-            <div class="menu-wrapper">
-                <img src="../starter-code/assets/shared/icon-hamburger.svg" alt="menu icon" id="menu">
-                <nav>
-                    <img src="../starter-code/assets/shared/icon-close.svg" alt="close icon" id="close">
-                    <ul>
-                        <li><a href="">00 Home</a></li>
-                        <li><a href="">01 Destination</a></li>
-                        <li><a href="">02 Crew</a></li>
-                        <li><a href="">03 Technology</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <header class="primary-header flex">
+        <div class="logo-wrapper">
+            <img src="../starter-code/assets/shared/logo.svg" alt="logo">
         </div>
+        <div class="line"></div>
+        <button class="mobile-nav-toggle" 
+        aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only"></span>
+        </button>
+
+        <nav>
+            <ul role="navigation" data-visible="false" class="primary-navigation flex" id="primary-navigation">
+                <!-- <div id="close-icon-wrapper" class="close-icon-wrapper icons">
+                    <img src="../starter-code/assets/shared/icon-close.svg" alt="close-icon">
+                </div> -->
+                <li class="active">
+                    <a href="#home" class="active">
+                    <span aria-hidden="true">00</span> 
+                    Home
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#home" class="active">
+                    <span aria-hidden="true">01</span> 
+                    Destination
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#home" class="active">
+                    <span aria-hidden="true">02</span> 
+                    Crew
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#home" class="active">
+                    <span aria-hidden="true">03</span> 
+                    Technology
+                    </a>
+                </li>
+            </ul>
+                
+        </nav>
+           
     </header>
-    <main>
-        <div class="main-container">
-            <h1>So, you want to travel to</h1>
-            <h2>Space</h2>
-            <p>
-                Let's face it; if you want to go to space, you might as well genuinely go to 
-                outer space and not hover kind of on the edge of it. Well sit back, and relax 
-                because we'll give you a truly out of this world experience!
-            </p>
-            <button>Explore</button>
+    <main class="container">
+        <div class="row flex">
+            <div class="col">
+                <h1 class="title">So, you want to travel to <span>space</span></h1>
+                <p>
+                    Let's face it; if you want to go to space, you might as well genuinely go to 
+                    outer space and not hover kind of on the edge of it. Well sit back, and relax 
+                    because we'll give you a truly out of this world experience!
+                </p>
+            </div>
+            <div class="col right">
+                <button class="explore-btn">Explore</button>
+            </div>
         </div>
+        
     </main>
 </body>
 </html>

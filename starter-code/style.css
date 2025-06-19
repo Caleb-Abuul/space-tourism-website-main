@@ -52,7 +52,7 @@ body{
 }
 .nav-bar{
     flex-grow: 1;
-    position: relative;
+    /* position: relative; */
     display: flex;
     align-items: center;
 }
@@ -122,6 +122,7 @@ nav ul li a{
 }
 .col{
     flex-basis: 40%;
+    flex-grow: 1;
 }
 .col.right{
     display: flex;
@@ -152,9 +153,40 @@ nav ul li a{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: 0.5s ease-in-out;
 }
 .explore p{
     color: var(--accent-clr);
     text-transform: uppercase;
     font-weight: var(--fw-200);
+}
+.explore:hover{
+    transform: scale(1.05);
+}
+.icons{
+    display: none;
+}
+
+@media (max-width: 960px){
+    .nav-bar{
+        
+    }
+    nav{
+        position: absolute;
+        top: 0;
+        right: -200px;
+        background-color: #000;
+        height: 100vh;
+        width: 200px;
+    }
+    .icons{
+        display: block;
+    }
+    .line{
+        display: none;
+    }
+    .menu-icon{
+        margin-right: var(--padding-inline);
+        cursor: pointer;
+    }
 }

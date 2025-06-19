@@ -1,0 +1,300 @@
+/* ------------ */
+    /* ROOT */
+/* ------------ */
+
+
+:root{
+  --light-clr: hsl(0, 0%, 100%);
+  --accent-clr: hsl(231, 71%, 89%);
+  --dark-clr: hsl(230, 35%, 7%);
+
+  --padding-inline: 2em;
+  --gap: 1em;
+  
+  --ff-primary: "Bellefair", sans-serif;
+  --ff-secondary: "", sans-serif;
+
+  --fw-100: 500;
+  --fw-200: 700;
+  --fw-300: 900;
+
+  --fs-100: 1em;
+  --fs-200: 1.5em;
+  --fs-250: 1.75em;
+  --fs-300: 2em;
+  --fs-400: 3em;
+}
+
+/* ------------ */
+    /* RESET */
+/* ------------ */
+
+/* https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: var(--ff-primary);
+  color: var(--light-clr);
+  display: grid;
+  overflow-x: hidden;
+  grid-template-rows: 10vh 90vh;
+  background-image: url(../starter-code/assets/home/background-home-desktop.jpg);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Disable animations for users who prefer reduced motion */
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* ----------------- */
+/* Utility classes */
+/* ----------------- */
+
+.flex{
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid{
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container{
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 60em;
+}
+
+/* ----------------- */
+/* General styling */
+/* ----------------- */
+
+
+.logo-wrapper{
+  margin: 2rem;
+
+}
+
+.line{
+  width: 40%;
+  height: 2px;
+
+  background-color: var(--light-clr);
+}
+
+.primary-header{
+  align-items: center;
+  justify-content: space-between;
+}
+.primary-navigation{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: hsl(0 0% 0% / 0.75);
+  
+}
+
+@supports (backdrop-filter: blur(1rem)){
+  .primary-navigation{
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+  }
+
+}
+
+.primary-navigation a{
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+.primary-navigation a:before{
+  content: "";
+  background-color: var(--light-clr);
+  width: 3em;
+  height: 3px;
+  position: absolute;
+  left: 25%;
+  bottom: -1.25em;
+}
+.mobile-nav-toggle{
+  display: none;
+}
+.primary-navigation a > [aria-hidden="true"]{
+  font-weight: 700;
+  margin-inline-end: 0.75em;
+}
+
+/* main */
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+}
+.col{
+  flex-basis: 50%;
+}
+.title{
+  font-size: var(--fs-250);
+  font-weight: var(--fw-200);
+  & span{
+    display: block;
+    margin: 0.25em 0;
+    font-size: var(--fs-300);
+    text-transform: uppercase;
+  }
+}
+
+.col.right{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.explore-btn{
+  width: 7em;
+  height: 7em;
+  border-radius: 100vmax;
+  outline: none;
+  border: 0;
+  font-size: var(--fs-300);
+  font-weight: var(--fw-200);
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 35em){
+  .primary-navigation{
+    --gap: clamp(1.5rem, 5vw, 3rem);
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2rem;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+  .line{
+    display: none;
+  }
+  .primary-navigation[data-visible="true"]{
+    transform: translateX(0%);
+  }
+  .mobile-nav-toggle{
+    display: block;
+    position: absolute;
+    background-image: url(../starter-code/assets/shared/icon-hamburger.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+    z-index: 9999;
+  }
+  .mobile-nav-toggle[aria-expanded="true"]{
+    background-image: url(../starter-code/assets/shared/icon-close.svg);
+  }
+}
+
+@media (min-width: 35em) and (max-width: 55em){
+  .primary-navigation a > [aria-hidden]{
+    display: none;
+  }
+}
+
+@media (min-width: 35em){
+  .primary-navigation{
+    padding-block: 1em;
+    padding-inline: clamp(3rem, 5vw, 10rem);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
