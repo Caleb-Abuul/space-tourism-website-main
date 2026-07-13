@@ -15,7 +15,7 @@
   --padding-inline: 6.25em;
 
   --primary-clr: #fff;
-  --secondary-clr: #ccc;
+  --secondary-clr: #a4a2a2;
   --accent-clr: #222;
 }
 /* general styles */
@@ -24,18 +24,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-body {
-  background-image: url(./assets/home/background-home-desktop.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  font-family: var(--ff-primary);
-  color: var(--primary-clr);
-  display: grid;
-  grid-template-rows: 10vh 90vh;
-}
-
 /* header */
 .header {
   display: flex;
@@ -91,9 +79,12 @@ nav ul li {
 }
 nav ul li a {
   text-decoration: none;
-  color: var(--primary-clr);
+  color: var(--secondary-clr);
   font-size: var(--fs-200);
   font-weight: var(--fw-100);
+}
+nav ul li a span {
+  color: var(--primary-clr);
 }
 .active::after {
   content: "";
@@ -104,73 +95,11 @@ nav ul li a {
   bottom: -1.05em;
   left: 0;
 }
-
-/* main */
-.main {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  padding-inline: var(--padding-inline);
-  padding-bottom: 5em;
-}
-.col {
-  flex-basis: 40%;
-  flex-grow: 1;
-}
-.col.right {
-  display: flex;
-  justify-content: flex-end;
-}
-.title {
-  font-size: var(--fs-200);
-  font-weight: var(--fw-200);
-}
-.title span {
-  display: block;
-  /* margin: .5em 0; */
-  font-size: var(--fs-350);
-  font-weight: var(--fw-300);
-  text-transform: uppercase;
-}
-.content p {
-  line-height: 1.5;
-}
-.explore {
-  background-color: var(--primary-clr);
-  width: 7em;
-  height: 7em;
-  border-radius: 100vmax;
-  border: 0;
-  font-size: var(--fs-300);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
-}
-.explore p {
-  color: var(--accent-clr);
-  text-transform: uppercase;
-  font-weight: var(--fw-200);
-}
-.explore:hover {
-  transform: scale(1.05);
-}
 .icons {
   display: none;
 }
 
 @media (max-width: 40em) {
-  body {
-    background-image: url("./assets/home/background-home-mobile.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    overflow-x: hidden;
-    font-size: 14px;
-  }
-
   nav {
     position: absolute;
     top: 0;
@@ -217,27 +146,5 @@ nav ul li a {
   .menu-icon {
     margin-right: 20px;
     cursor: pointer;
-  }
-  /* main */
-  .main {
-    height: 100%;
-    padding: 0 20px;
-    margin: 0;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .col {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .col.right {
-    flex-direction: row;
-  }
-
-  .active::after {
-    display: none;
   }
 }

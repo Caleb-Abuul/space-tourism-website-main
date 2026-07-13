@@ -1,0 +1,135 @@
+:root {
+  --ff-primary: "Popins", sans-serif;
+  --ff-secondary: "Arial";
+
+  --fs-100: 0.85em;
+  --fs-200: 1em;
+  --fs-250: 1.25em;
+  --fs-300: 2em;
+  --fs-350: 3.5em;
+
+  --fw-100: 600;
+  --fw-200: 800;
+  --fw-300: 900;
+
+  --padding-inline: 6.25em;
+
+  --primary-clr: #fff;
+  --secondary-clr: #a4a2a2;
+  --accent-clr: #222;
+
+  --fs-title: var(--fs-350);
+  --fs-sub-title: var(--fs-300);
+  --fs-body: var(--fs-200);
+  --fs-nav: var(--fs-100);
+
+  --fw-title: var(--fw-300);
+  --fw-subtitle: var(--fw-200);
+  --fw-nav: var(--fw-100);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* manual styling */
+body {
+  background-image: url("../assets/technology/background-technology-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: var(--ff-primary);
+}
+.container {
+  display: grid;
+  grid-template-columns: 10% 55% 30%;
+  grid-template-rows: 20% 77.5%;
+  grid-template-areas:
+    "title title title"
+    "numbers content img-wrapper";
+  gap: 2.5%;
+  height: 70%;
+  padding-inline: var(--padding-inline);
+  margin-top: 2rem;
+  color: var(--primary-clr);
+}
+.title-wrap {
+  grid-area: title;
+}
+.title {
+  font-size: var(--fs-250);
+  font-weight: var(--fw-200);
+  letter-spacing: 4.75px;
+  color: var(--primary-clr);
+  text-transform: uppercase;
+}
+.title span {
+  color: var(--secondary-clr);
+}
+.numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  height: 100%;
+  object-fit: contain;
+}
+.numbers a {
+  text-decoration: none;
+  color: var(--primary-clr);
+}
+.digit {
+  grid-area: numbers;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100vmax;
+  border: 1px solid var(--primary-clr);
+  background: transparent;
+  font-size: 40px;
+  cursor: pointer;
+}
+.digit.active {
+  background-color: var(--primary-clr);
+  color: var(--accent-clr);
+}
+.content {
+  grid-area: content;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding-right: 3.5rem;
+}
+.content h2 {
+  font-size: var(--fs-350);
+  font-size: var(--fw-200);
+  text-transform: uppercase;
+}
+.content h3 {
+  font-size: var(--fs-350);
+  text-transform: uppercase;
+}
+.content p {
+  line-height: 2;
+}
+.img-wrapper {
+  grid-area: img-wrapper;
+}
+.img-wrapper img {
+  display: block;
+  object-fit: fill;
+  width: 100%;
+}
+
+@media (max-with: 760px) {
+  body {
+    background: url("../assets/technology/background-technology-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
