@@ -91,9 +91,12 @@ nav ul li {
 }
 nav ul li a {
   text-decoration: none;
-  color: var(--primary-clr);
+  color: var(--secondary-clr);
   font-size: var(--fs-200);
   font-weight: var(--fw-100);
+}
+nav ul li a span {
+  color: var(--primary-clr);
 }
 .active::after {
   content: "";
@@ -160,7 +163,7 @@ nav ul li a {
   display: none;
 }
 
-@media (max-width: 40em) {
+@media (max-width: 560px) {
   body {
     background-image: url("./assets/home/background-home-mobile.jpg");
     background-position: center;
@@ -170,7 +173,6 @@ nav ul li a {
     overflow-x: hidden;
     font-size: 14px;
   }
-
   nav {
     position: absolute;
     top: 0;
@@ -239,5 +241,44 @@ nav ul li a {
 
   .active::after {
     display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-image: url("./assets/home/background-home-tablet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+  .header {
+    justify-content: space-between;
+  }
+  .nav-bar {
+    justify-content: flex-end;
+    padding-right: var(--padding-inline);
+    padding: 0;
+  }
+  .line {
+    display: none;
+  }
+  nav ul li a span {
+    display: none;
+  }
+  .main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+  }
+  .left {
+    margin-top: 4rem;
+    text-align: center;
+  }
+  .col.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

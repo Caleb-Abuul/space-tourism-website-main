@@ -99,7 +99,15 @@ nav ul li a span {
   display: none;
 }
 
-@media (max-width: 40em) {
+@media (max-width: 760px) {
+  header {
+    justify-content: space-between;
+  }
+  .nav-bar {
+    justify-content: flex-end;
+    padding-right: var(--padding-inline);
+    padding: 0;
+  }
   nav {
     position: absolute;
     top: 0;
@@ -121,6 +129,10 @@ nav ul li a span {
     margin: 0;
     padding: 0;
   }
+  .active::after {
+    display: none;
+    width: 0%;
+  }
   .close-icon-wrapper {
     width: 100%;
     display: flex;
@@ -128,15 +140,6 @@ nav ul li a span {
     justify-content: end;
     margin-bottom: 1.5rem;
   }
-  header {
-    justify-content: space-between;
-  }
-  .nav-bar {
-    justify-content: flex-end;
-    padding-right: var(--padding-inline);
-    padding: 0;
-  }
-
   .icons {
     display: block;
   }
@@ -146,5 +149,21 @@ nav ul li a span {
   .menu-icon {
     margin-right: 20px;
     cursor: pointer;
+  }
+}
+@media (max-width: 1024px) {
+  .header {
+    justify-content: space-between;
+  }
+  .nav-bar {
+    justify-content: flex-end;
+    padding-right: var(--padding-inline);
+    padding: 0;
+  }
+  .line {
+    display: none;
+  }
+  nav ul li a span {
+    display: none;
   }
 }

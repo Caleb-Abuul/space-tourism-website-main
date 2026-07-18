@@ -119,6 +119,8 @@ body {
 }
 .img-wrapper {
   grid-area: img-wrapper;
+  height: 100%;
+  width: 100%;
 }
 .img-wrapper img {
   display: block;
@@ -126,10 +128,89 @@ body {
   width: 100%;
 }
 
-@media (max-with: 760px) {
+@media (max-width: 560px) {
   body {
     background: url("../assets/technology/background-technology-mobile.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  .container {
+    height: 100%;
+    width: 100%;
+    padding-inline: 2em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5% minmax(0, 22%) 8% 55%;
+    grid-template-areas:
+      "title-wrap"
+      "img-wrapper"
+      "numbers"
+      "content";
+    gap: 2.5%;
+  }
+  .title-wrap {
+    width: 100%;
+    grid-area: title-wrap;
+  }
+  .img-wrapper {
+    grid-area: img-wrapper;
+    width: 100%;
+    height: auto;
+  }
+  .numbers {
+    flex-direction: row;
+    grid-area: numbers;
+  }
+  .content {
+    grid-area: content;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-image: url("../assets/technology/background-technology-tablet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+  }
+  .container {
+    height: 100%;
+    width: 100%;
+    padding-inline: 2em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5% minmax(0, 20%) 10% 50%;
+    grid-template-areas:
+      "title-wrap"
+      "img-wrapper"
+      "numbers"
+      "content";
+    gap: 2.5%;
+  }
+  .title-wrap {
+    width: 100%;
+    grid-area: title-wrap;
+  }
+  .img-wrapper {
+    grid-area: img-wrapper;
+    width: 100%;
+    height: 100%;
+  }
+  .numbers {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    grid-area: numbers;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 }

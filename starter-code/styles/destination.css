@@ -114,7 +114,7 @@ main {
   display: block;
   object-fit: contain;
 }
-.active::after {
+.active-title::after {
   content: "";
   display: block;
   width: 100%;
@@ -123,4 +123,45 @@ main {
   position: absolute;
   bottom: -5px;
   left: 0;
+}
+
+@media (max-width: 560px) {
+  body {
+    background-image: url("../assets/destination/background-destination-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  main {
+    padding-inline: 2em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 35% 40%;
+    grid-template-areas:
+      "title-wrap"
+      "destination"
+      "content-wrap";
+  }
+  .content-wrap {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .destination {
+    padding-block: 1rem;
+  }
+  .content-wrap {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .desc {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
