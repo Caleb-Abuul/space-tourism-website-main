@@ -12,12 +12,12 @@
     />
 
     <!-- css -->
-    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
 
-    <link rel="stylesheet" href="./styles/crew.css" />
+    <link rel="stylesheet" href="../../styles/crew.css" />
 
     <!-- script -->
-    <script src="./scripts/crew.js" defer></script>
+    <script src="../../scripts/crew.js" defer></script>
 
     <title>Frontend Mentor | Space tourism website</title>
   </head>
@@ -26,11 +26,7 @@
     <header class="header">
       <!-- logo container-->
       <div class="logo-wrapper">
-        <img
-          src="../starter-code/assets/shared/logo.svg"
-          alt="logo"
-          width="40px"
-        />
+        <img src="../../assets/shared/logo.svg" alt="logo" width="40px" />
       </div>
 
       <div class="nav-bar">
@@ -46,31 +42,28 @@
           >
             <!-- close icon for mobile -->
             <div id="close-icon" class="close-icon-wrapper icons">
-              <img
-                src="../starter-code/assets/shared/icon-close.svg"
-                alt="close-icon"
-              />
+              <img src="../../assets/shared/icon-close.svg" alt="close-icon" />
             </div>
             <li>
-              <a href="index.html">
+              <a href="../../index.html">
                 <span aria-hidden="true">00</span>
                 Home
               </a>
             </li>
             <li>
-              <a href="destination-moon.html">
+              <a href="../destination/destination-moon.html">
                 <span aria-hidden="true">01</span>
                 Destination
               </a>
             </li>
-            <li class="active">
-              <a href="crew-commander.html" class="active">
+            <li>
+              <a href="../crew/crew-commander.html" class="active">
                 <span aria-hidden="true">02</span>
                 Crew
               </a>
             </li>
             <li>
-              <a href="technology-spaceport.html">
+              <a href="../technology/technology-spaceport.html">
                 <span aria-hidden="true">03</span>
                 Technology
               </a>
@@ -80,10 +73,7 @@
 
         <!-- menu icon for mobile -->
         <div class="menu-icon icons" id="menu">
-          <img
-            src="../starter-code/assets/shared/icon-hamburger.svg"
-            alt="menu-icon"
-          />
+          <img src="../../assets/shared/icon-hamburger.svg" alt="menu-icon" />
         </div>
       </div>
     </header>
@@ -96,38 +86,32 @@
 
         <div class="content">
           <div class="inner-content">
-            <h2 class="crew-title">Pilot</h2>
-            <h2 class="crew-name">Victor Glover</h2>
+            <h2 class="crew-title">Commander</h2>
+            <h2 class="crew-name">Douglas Hurley</h2>
             <div class="crew-description">
               <p>
-                Pilot on the first operational flight of the SpaceX Crew Dragon
-                to the International Space Station. Glover is a commander in the
-                U.S. Navy where he pilots an F/A-18.He was a crew member of
-                Expedition 64, and served as a station systems flight engineer.
+                Douglas Gerald Hurley is an American engineer, former Marine
+                Corps pilot and former NASA astronaut. He launched into space
+                for the third time as commander of Crew Dragon Demo-2.
               </p>
             </div>
           </div>
 
           <div class="dots">
-            <a href="./crew-commander.html">
-              <span class="dot" id="0"></span>
-            </a>
-            <a href="./crew-engineer.html">
-              <span class="dot" id="1"></span>
-            </a>
-            <a href="./crew-pilot.html">
-              <span class="dot active-dot" id="2"></span>
-            </a>
-            <a href="./crew-specialist.html">
-              <span class="dot" id="3"></span>
-            </a>
+            <a href="./crew-commander.html"
+              ><span class="dot active-dot" id="0"></span
+            ></a>
+            <a href="./crew-engineer.html"><span class="dot" id="1"></span></a>
+            <a href="./crew-pilot.html"><span class="dot" id="2"></span></a>
+            <a href="./crew-specialist.html"
+              ><span class="dot" id="3"></span
+            ></a>
           </div>
         </div>
         <div class="image-wrapper">
           <img
-            src="../starter-code/assets/crew/image-victor-glover.png"
+            src="../../assets/crew/image-douglas-hurley.png"
             alt="Douglas Hurley"
-            id="crew-image"
           />
         </div>
       </div>
