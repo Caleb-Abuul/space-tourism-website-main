@@ -42,8 +42,8 @@ This space tourism website includes:
 
 ### Links
 
-- Solution Repository: []()
-- Live Site: [GitHub - space-tourism-website-main](https://github.com/Caleb-Abuul/space-tourism-website-main)
+- Solution Repository: [GitHub - space-tourism-website-main](https://github.com/Caleb-Abuul/space-tourism-website-main)
+- Live Site: [Github pages - space-tourisim](https://caleb-abuul.github.io/space-tourism-website-main/index.html)
 
 ## My Process
 
